@@ -1,0 +1,66 @@
+$text-primary-color: #351e12;
+$font-stack : 'Times New Roman', Times, serif;
+$font-w-stack : 'italic';
+
+.Hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  hr {
+    width: 80%;
+    border: 0;
+    border-bottom: 3px dotted $text-primary-color;
+    border-width: 10px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .Hero_main_list {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:10px;
+      .icon{
+        font-size: 3.2rem;
+        transform: rotate(9deg);
+      }
+      span{
+        font-size: 1.7rem;
+        font-family:$font-stack;
+        font-style: $font-w-stack;
+        cursor: pointer;
+        &:hover {
+          border-bottom: 1px solid black;
+        }
+      }
+      
+    }
+  }
+
+  .Hero_filter_list {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 20px;
+
+    li {
+      padding: 4px 8px;
+      cursor: pointer;
+ 
+
+      &:hover {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}

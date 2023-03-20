@@ -1,0 +1,48 @@
+$background-secondary-color: rgba(87, 63, 63, 0.965);
+
+.DrinkCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  height: 400px;
+ 
+  .arrow-up {
+    position: absolute;
+    top:408px;
+    left:25px;
+    width: 0; 
+    height: 0; 
+    border-left:0px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 20px solid rgb(48, 48, 48);
+    z-index: 1;
+  }
+
+  img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  &__text {
+    border-radius: 6px;
+    position: absolute;
+    top:285px;
+    width: 70%;
+    padding: 12px;
+    background-color: $background-secondary-color;
+    color: white;
+    font-style: oblique;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+   h2{
+        font-size: 1.2rem;
+      }
+
+    ul {
+      padding-left: 18px;
+    }
+  }
+}
