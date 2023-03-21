@@ -1,13 +1,15 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
 .Navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 12px;
+  @include flex-container( row , space-between );
+  @include spacing( 6px 12px );
+   
   
     .Navbar_main_list {
-      display: flex;
-      gap: 18px;
-      padding: 0;
+      @include flex-container( row , center,center, 18px );
+      @include spacing( 0,0 );
       list-style-type: none;
   
       li {
@@ -39,9 +41,9 @@
     }
 
     .Navbar_social_list {
-        display: flex;
-        gap: 20px;
-        padding: 0;
+       @include flex-container( row , center,center, 20px );
+       @include spacing( 0,0 );
+    
         font-size: 1rem;
         list-style-type: none;
     

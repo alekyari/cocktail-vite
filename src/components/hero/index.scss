@@ -1,11 +1,11 @@
-$text-primary-color: #351e12;
-$font-stack : 'Times New Roman', Times, serif;
-$font-w-stack : 'italic';
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
 
 .Hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-container( column );
+
 
   hr {
     width: 80%;
@@ -19,16 +19,14 @@ $font-w-stack : 'italic';
   }
 
   .Hero_main_list {
-    display: flex;
-    gap: 40px;
-    padding: 0;
+    @include flex-container( row , center,center, 40px );
+    @include spacing( 0,0 );
     list-style-type: none;
 
     li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap:10px;
+      @include flex-container( row , center,center, 10px );
+      @include spacing( 0,0 );
+      
       .icon{
         font-size: 3.2rem;
         transform: rotate(9deg);
@@ -47,15 +45,16 @@ $font-w-stack : 'italic';
   }
 
   .Hero_filter_list {
-    display: flex;
-    gap: 40px;
-    padding: 0;
+    @include flex-container( row , center,center, 40px );
+    @include spacing( 0, 0 0 20px 0 );
     list-style-type: none;
-    margin-bottom: 20px;
+  
 
     li {
-      padding: 4px 8px;
+      padding: 20px 8px 10px 8px;
       cursor: pointer;
+      font-weight: bold;
+      font-size: 0.7rem;
  
 
       &:hover {

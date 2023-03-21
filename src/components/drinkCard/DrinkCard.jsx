@@ -1,8 +1,14 @@
 import "./index.scss";
 
-const DrinkCard = ({ data }) => {
+const DrinkCard = ({ data, setModalDrinkContext }) => {
+  const onHandleClick = () =>
+  setModalDrinkContext((prev) => ({
+    ...prev,
+    payload: data,
+    isVisible: true,
+  }));
   return (
-    <div className="DrinkCard">
+    <div onClick={onHandleClick} className="DrinkCard">
       <img src={data.strDrinkThumb} alt={data.strDrink} />
       <div className="arrow-up"></div>
       <div className="DrinkCard__text">

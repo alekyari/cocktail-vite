@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.ModalDrink_overlay{
+  @include flex-container;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.779);
+  z-index: 2;
+.ModalDrink_background{
+  .Background_Modal{
+    position: fixed;
+    width: 900px;
+    height: 550px;
+    top: 180px;
+    left: calc(50% - 450px);
+    object-fit: cover;
+    filter: blur(10px)
+  }
+
+.ModalDrink {
+  @include flex-container;
+  position: fixed;
+  width: 800px;
+  height: 500px;
+  background-color: $background-primary-color;
+  border-radius: 6px;
+  top: 230px;
+  left: calc(50% - 400px);
+  z-index: 3;
+  font-size: 0.8rem;
+
+  &__image {
+    width: 48%;
+    height: 100%;
+ 
+    img {
+      width: 100%;
+      height: 500px;
+      border-radius: 6px;;
+      object-fit: cover;
+    }
+
+    
+    
+  }
+
+  &__text {
+    @include flex-container(column, space-around, center);
+    // @include spacing(10px0);
+    box-sizing: border-box;
+    width: 52%;
+    height: 100%;
+    padding: 20px;
+   
+
+    &--main{
+     
+    // @include spacing(10px0);
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+   gap:3px;
+   
+     &--header{
+      @include flex-container(row, space-between );
+      button{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      
+      &:hover{
+        scale: 1.1;
+        }
+       }
+     }
+
+    
+    }
+
+    &--lists {
+      width: 100%;
+      @include flex-container(column, flex-start, flex-start );
+      
+      margin:0;
+
+      &--ingredients {
+       padding:0;
+        list-style-type: none;
+
+      
+      }
+      &--instructions {
+        padding: 0;
+        list-style-type: none;
+      }
+    }
+  }
+
+  
+}
+}
+}

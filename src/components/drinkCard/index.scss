@@ -1,10 +1,11 @@
-$background-secondary-color: rgba(87, 63, 63, 0.965);
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 
 .DrinkCard {
+  @include flex-container( column );
+  @include spacing( 0,0 );
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 260px;
   height: 400px;
  
@@ -36,13 +37,14 @@ $background-secondary-color: rgba(87, 63, 63, 0.965);
     background-color: $background-secondary-color;
     color: white;
     font-style: oblique;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
    h2{
         font-size: 1.2rem;
       }
 
     ul {
       padding-left: 18px;
+ 
     }
   }
 }

@@ -1,4 +1,5 @@
 import { GET } from "../../utils/http";
+import { filteredList } from "../../utils/funcs";
 import { useState, useEffect } from "react";
 import {  BiDrink } from 'react-icons/bi'
 import {  GiDrinkMe } from 'react-icons/gi'
@@ -12,10 +13,10 @@ const Hero = ({ setCategory }) => {
     setCategory(value);
   };
  
+
   useEffect(() => {
     GET("/list.php?c=list").then((category ) => {
-      setCocktailCategoryList(() => category)
-      // .then(()=>console.log("prova"));
+      setCocktailCategoryList(() => category.drinks)
     });
   }, []);
 
@@ -32,18 +33,11 @@ const Hero = ({ setCategory }) => {
       <hr />
       <ul className="Hero_filter_list">
 
-       {/* {cocktailCategoryList.map((category) => (
-       <li onClick={()=> onHandleClick(`${category.strCategory}`)}>{`${category.strCategory}`}</li>
-       
-       ))}  */}
-
+       {cocktailCategoryList.map((category) => (
       
-       <li onClick={() => onHandleClick("Cocktail")}>Cocktail</li>
-        <li onClick={() => onHandleClick("Other / Unknown")}>Other</li>
-        <li onClick={() => onHandleClick("Shake")}>Shake</li>
-        <li onClick={() => onHandleClick("Shot")}>Shot</li>
-        <li onClick={() => onHandleClick("Punch / Party Drink")}>Punch</li>
-        <li onClick={() => onHandleClick("Coffee / Tea")}>Coffee</li>
+       <li key = {category.strCategory} onClick={()=> onHandleClick(`${category.strCategory}`)}>{`${category.strCategory}`}</li>
+       ))} 
+  
        
       </ul>
     </div>
