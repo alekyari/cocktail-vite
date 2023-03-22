@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.footer {
+  font-size: 0.9rem;
+  @include flex-container(column);
+  padding-top: 30px;
+  background-color: $background-secondary-color;
+  margin:0;
+ 
+  
+
+
+.container {
+  height: 80px;
+  @include flex-container(row, center, center, 100px);
+  list-style: none;
+ 
+
+
+
+
+.li {
+  height: 60px;
+  gap: 50px;
+  text-decoration: none;
+  list-style: none;
+
+
+}
+
+.element {
+ color:white;
+ text-decoration: none;
+
+
+}
+}
+}

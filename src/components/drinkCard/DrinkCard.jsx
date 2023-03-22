@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const DrinkCard = ({ data, setModalDrinkContext }) => {
   const onHandleClick = () =>
@@ -8,10 +8,10 @@ const DrinkCard = ({ data, setModalDrinkContext }) => {
     isVisible: true,
   }));
   return (
-    <div onClick={onHandleClick} className="DrinkCard">
+    <div onClick={onHandleClick} className={styles.DrinkCard}>
       <img src={data.strDrinkThumb} alt={data.strDrink} />
-      <div className="arrow-up"></div>
-      <div className="DrinkCard__text">
+      <div className={styles.arrow_up}></div>
+      <div className={styles.text}>
       
         <h2>{data.strDrink}</h2>
         <ul>

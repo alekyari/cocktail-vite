@@ -34,7 +34,7 @@
   z-index: 3;
   font-size: 0.8rem;
 
-  &__image {
+  .image {
     width: 48%;
     height: 100%;
  
@@ -49,24 +49,33 @@
     
   }
 
-  &__text {
+  .text {
     @include flex-container(column, space-around, center);
     // @include spacing(10px0);
     box-sizing: border-box;
     width: 52%;
     height: 100%;
     padding: 20px;
+  
    
 
-    &--main{
+    hr {
+      width: 80%;
+      border: 0;
+      border-bottom: 3px dotted $text-primary-color;
+      border-radius:100%;
+      margin:4px;
+    }
+    
+    &_main{
      
     // @include spacing(10px0);
     box-sizing: border-box;
     width: 100%;
-    height: 50%;
-   gap:3px;
+    height: 100%;
+    gap:3px;
    
-     &--header{
+     &_header{
       @include flex-container(row, space-between );
       button{
         border: none;
@@ -82,20 +91,20 @@
     
     }
 
-    &--lists {
+    &_lists {
       width: 100%;
       @include flex-container(column, flex-start, flex-start );
+      @include spacing;
       
-      margin:0;
 
-      &--ingredients {
-       padding:0;
+      &_ingredients {
+        @include spacing(0, 0 0 8px 0);
         list-style-type: none;
 
       
       }
-      &--instructions {
-        padding: 0;
+      &_instructions {
+        @include spacing(0, 0 0 8px 0);
         list-style-type: none;
       }
     }

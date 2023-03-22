@@ -2,7 +2,7 @@ import DrinkCard from "../drinkCard";
 import { useState, useEffect } from "react";
 import { filteredList } from "../../utils/funcs";
 import { GET } from "../../utils/http";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Content = ({category, setModalDrinkContext}) => {
   const [cocktailList, setCocktailList] = useState([]);
@@ -15,7 +15,7 @@ const Content = ({category, setModalDrinkContext}) => {
   {console.log(cocktailList)}
 
   return (
-    <div className="Content">
+    <div className={styles.Content}>
       {data.map((cocktail) => (
         <DrinkCard key={cocktail.idDrink} data={cocktail} setModalDrinkContext={setModalDrinkContext} />
       ))}

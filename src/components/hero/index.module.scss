@@ -18,7 +18,7 @@
     font-size: 2.5rem;
   }
 
-  .Hero_main_list {
+  .main_list {
     @include flex-container( row , center,center, 40px );
     @include spacing( 0,0 );
     list-style-type: none;
@@ -44,7 +44,7 @@
     }
   }
 
-  .Hero_filter_list {
+  .filter_list {
     @include flex-container( row , center,center, 40px );
     @include spacing( 0, 0 0 20px 0 );
     list-style-type: none;
@@ -61,5 +61,22 @@
         border-bottom: 1px solid black;
       }
     }
+
+    .hamList{
+      @include flex-container( column , center,center, 40px );
+      position: fixed;
+      gap:25px;
+      top:60px;
+      right:10px;
+      width: 130px;
+      height: 800px;
+      background-color:$background-secondary-color ;
+      color:white;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.812);
+      @include spacing( 10px,0 );
+      z-index: 2;
+    }
+
   }
 }
