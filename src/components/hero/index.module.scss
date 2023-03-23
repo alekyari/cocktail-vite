@@ -28,8 +28,8 @@
       @include spacing( 0,0 );
       
       .icon{
-        font-size: 3.2rem;
-        transform: rotate(9deg);
+        display:none;
+     
       }
       span{
         font-size: 1.7rem;
@@ -78,5 +78,14 @@
       z-index: 2;
     }
 
+  }
+}
+
+
+@media screen and (min-width: 1050px) {
+  .icon {
+    display:block !important;
+    font-size: 3.2rem ;
+    transform: rotate(9deg);
   }
 }

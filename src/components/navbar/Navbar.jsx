@@ -5,9 +5,11 @@ import {  GrInstagram  } from 'react-icons/gr'
 import {  GiHamburgerMenu  } from 'react-icons/gi'
 
 
-const Navbar = () =>{
-  const [showNavMenu, setShowNavMenu] = useState(true);
-const onHandleClick=() => setShowNavMenu((prev)=>!prev)
+const Navbar = ({setShowModalReservation}) =>{
+  const [showNavMenu, setShowNavMenu] = useState(false);
+
+  const onHandleClick=() => setShowNavMenu((prev)=>!prev)
+  const onHandleShowModalReservation=() => {setShowModalReservation(true)}
 
     return (
         <div className={styles.Navbar}>
@@ -31,7 +33,7 @@ const onHandleClick=() => setShowNavMenu((prev)=>!prev)
         <li>495 career</li>
       </ul>
 <h3> 495 COCKTAIL BAR</h3>
-      <button>495 PARTNERS</button>
+      <button  onClick={onHandleShowModalReservation} className={styles.btn}>RESERVE NOW!</button>
       <ul className={styles.social_list}>
         <li><GrInstagram/></li>
         <li><FaFacebookSquare/></li>

@@ -12,7 +12,7 @@ const Content = ({category, setModalDrinkContext}) => {
     });
   }, []);
   const data = filteredList(cocktailList, "strCategory", category);
-  {console.log(cocktailList)}
+ 
 
   return (
     <div className={styles.Content}>

@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 
 const Hero = ({ setCategory }) => {
   const [cocktailCategoryList, setCocktailCategoryList] = useState([]);
-  const [showNavMenu, setShowNavMenu] = useState(true);
+  const [showNavMenu, setShowNavMenu] = useState(false);
 
   const onHandleShowMenu=() => setShowNavMenu((prev)=>!prev)
 
