@@ -8,18 +8,19 @@
   padding-top: 30px;
   background-color: $background-secondary-color;
   margin:0;
+  padding:25px;
  
   
 
 
 .container {
-  height: 80px;
-  @include flex-container(row, center, center, 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  height: 110px;
   list-style: none;
- 
-
-
-
 
 .li {
   height: 60px;
@@ -37,4 +38,29 @@
 
 }
 }
+}
+
+@media screen and (min-width: 1050px) {
+
+  .footer {
+      
+       
+  .container {
+  
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    list-style: none;
+    
+    
+  }
+
+  
+
+}
+
+  
 }

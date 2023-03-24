@@ -27,7 +27,7 @@ setPopupReservationContext((prev) => ({
         data: data,
         isVisible: false,
       }));
-  }, 2000)};
+  }, 5000)};
 
 const onHandleNameInput = (e) => setName(e.target.value);
 const onHandleSurNameInput = (e) => setSurName(e.target.value);
