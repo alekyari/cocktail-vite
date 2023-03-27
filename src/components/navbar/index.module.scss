@@ -7,9 +7,68 @@
   @include spacing( 15px 20px, 0 );
    
   .hamburger{
+    position: relative;
     display:flex;
+    width: 30px;
+    height: 35px;
+    z-index: 10;
     font-size: 1.6rem;
     padding:10px;
+ 
+
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 38px;
+      
+
+      &::before {
+          content: "";
+          background: $text-primary-color;
+          display: block;
+          height: 3px;
+          margin: 6px 0;
+          border-radius: 1px;
+          transition: 0.5s;
+      }
+      
+      &::after {
+          content: "";
+          background:$text-primary-color;
+          display: block;
+          height: 3px;
+          margin: 6px 0;
+          border-radius: 1px;
+          transition: 0.5s;
+      }
+      
+      div {
+          background:$text-primary-color;
+          display: block;
+          height: 3px;
+          margin: 6px 0;
+          transition: 0.5s;
+          border-radius: 1px;
+      }
+  }
+
+  &__open {
+      .center {
+          &::before {
+              transform: translateY(9px) rotate(-135deg);
+          }
+          &::after {
+              transform: translateY(-9px) rotate(135deg);
+          }
+          div {
+              transform: scale(0);
+          }
+      }
+  }
+
   }
 
   .main_list_mobile{
@@ -21,7 +80,7 @@
       @include spacing( 10px,0 );
       list-style-type: none;
       position:fixed;
-      top:60px;
+      top:80px;
       left:10px;
       width: 100px;
       height: 200px;
@@ -29,12 +88,13 @@
       color:white;
       border-radius: 3px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.812);
+      z-index: 1;
   
       li {
         font-weight: bold;
         cursor: pointer;
         &:hover {
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid  $text-primary-color;
         }
       }
   }
@@ -44,14 +104,14 @@
      
       // @include flex-container( row , center,center, 18px );
       display: none;
-      @include spacing( 0,0 );
+      @include spacing( 0,0 0 20px 0 );
       list-style-type: none;
   
       li {
         font-weight: bold;
         cursor: pointer;
         &:hover {
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid  $text-primary-color;
         }
       }
     }
@@ -86,7 +146,8 @@
           cursor: pointer;
           border-radius: 70%;
           padding:3px;
-          background-color:lightgray
+          background-color:lightgray;
+          color:$secondary-color;
         }
       }
   }

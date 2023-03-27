@@ -5,8 +5,7 @@ import {  GrInstagram  } from 'react-icons/gr'
 import {  GiHamburgerMenu  } from 'react-icons/gi'
 
 
-const Navbar = ({setShowModalReservation}) =>{
-  const [showNavMenu, setShowNavMenu] = useState(false);
+const Navbar = ({setShowModalReservation, setShowNavMenu, showNavMenu}) =>{
 
   const onHandleClick=() => setShowNavMenu((prev)=>!prev)
   const onHandleShowModalReservation=() => {setShowModalReservation(true)}
@@ -14,8 +13,11 @@ const Navbar = ({setShowModalReservation}) =>{
     return (
         <div className={styles.Navbar}>
      
-     <div className={styles.hamburger}>
-     < GiHamburgerMenu   onClick={onHandleClick}/>
+     <div onClick={onHandleClick} className={`${styles.hamburger} ${showNavMenu && styles.hamburger__open}`}  >
+     {/* < GiHamburgerMenu   onClick={onHandleClick}/> */}
+          <div className={styles.center}>
+                    <div></div>
+          </div>
      </div>
      {showNavMenu && <ul className={styles.main_list_mobile}>
         <li>Our Story</li>

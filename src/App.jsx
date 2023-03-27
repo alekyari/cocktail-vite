@@ -8,6 +8,7 @@ import ModalReservation from "./components/modalReservation";
 import PopupReservation from "./components/popupReservation";
 import styles from "./App.module.scss"
 function App() {
+  const [showNavMenu, setShowNavMenu] = useState(false);
   const [showModalReservation, setShowModalReservation] = useState(false);
   const [category, setCategory] = useState("Cocktail");
   const [modalDrinkContext, setModalDrinkContext] = useState({
@@ -19,12 +20,13 @@ function App() {
     isVisible:false,
   });
   
+  const onHandleCloseNavMenu=() => setShowNavMenu(false)
 
   return (
     <div className={styles.App}>
-     <Navbar setShowModalReservation={setShowModalReservation} />
-     <Hero setCategory={setCategory} />
-     <Content category={category} setModalDrinkContext={setModalDrinkContext}/>
+     <Navbar setShowModalReservation={setShowModalReservation}  setShowNavMenu={setShowNavMenu} showNavMenu={showNavMenu}/>
+     <Hero onClick={onHandleCloseNavMenu} setCategory={setCategory} />
+     <Content onClick={onHandleCloseNavMenu} category={category} setModalDrinkContext={setModalDrinkContext}/>
      {modalDrinkContext.isVisible && <ModalDrink  data={modalDrinkContext.payload} setModalDrinkContext={setModalDrinkContext}/>}
      {showModalReservation && <ModalReservation setShowModalReservation={setShowModalReservation} setPopupReservationContext={setPopupReservationContext} />}
      {popupReservationContext.isVisible && <PopupReservation  data={popupReservationContext.data}/>}

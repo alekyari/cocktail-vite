@@ -20,3 +20,8 @@
   padding: $padding;
   margin: $margin;
 }
+
+@mixin background-gradient($deg, $color1, $color2, $opacity) {
+  background: linear-gradient($deg, $color1, $color2);
+  opacity: $opacity;
+}

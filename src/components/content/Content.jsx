@@ -17,7 +17,7 @@ const Content = ({category, setModalDrinkContext}) => {
   return (
     <div className={styles.Content}>
       {data.map((cocktail) => (
-        <DrinkCard key={cocktail.idDrink} data={cocktail} setModalDrinkContext={setModalDrinkContext} />
+        <DrinkCard className={styles.DrinkCard} key={cocktail.idDrink} data={cocktail} setModalDrinkContext={setModalDrinkContext} />
       ))}
     </div>
   );
