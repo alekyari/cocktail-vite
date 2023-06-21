@@ -30,7 +30,7 @@ function App() {
      {modalDrinkContext.isVisible && <ModalDrink  data={modalDrinkContext.payload} setModalDrinkContext={setModalDrinkContext}/>}
      {showModalReservation && <ModalReservation setShowModalReservation={setShowModalReservation} setPopupReservationContext={setPopupReservationContext} />}
      {popupReservationContext.isVisible && <PopupReservation  data={popupReservationContext.data}/>}
-     <Footer/>
+     {/* <Footer/> */}
      </div>
   )
 }
