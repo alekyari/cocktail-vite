@@ -3,7 +3,7 @@ import Navbar from "./components/navbar"
 import Hero from "./components/hero"
 import Content from "./components/content";
 import ModalDrink from "./components/modalDrink";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import ModalReservation from "./components/modalReservation";
 import PopupReservation from "./components/popupReservation";
 import styles from "./App.module.scss"
@@ -30,7 +30,7 @@ function App() {
      {modalDrinkContext.isVisible && <ModalDrink  data={modalDrinkContext.payload} setModalDrinkContext={setModalDrinkContext}/>}
      {showModalReservation && <ModalReservation setShowModalReservation={setShowModalReservation} setPopupReservationContext={setPopupReservationContext} />}
      {popupReservationContext.isVisible && <PopupReservation  data={popupReservationContext.data}/>}
-     {/* <Footer/> */}
+     <Footer/>
      </div>
   )
 }
